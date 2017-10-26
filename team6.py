@@ -1,11 +1,4 @@
-echo "# AP_CSP_IterativePrisonersDilemma_team6" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:kischmidt/AP_CSP_IterativePrisonersDilemma_team6.git
-git push -u origin master
-
-
+import random
 ####
 # Each team's file must define four tokens:
 #     team_name: team6
