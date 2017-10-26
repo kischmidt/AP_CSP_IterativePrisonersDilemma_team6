@@ -16,8 +16,10 @@ git push -u origin master
 
 team_name = 'team6'
 strategy_name = 'Random'
-strategy_description = 'How does this strategy decide?'
-    
+strategy_description = 'Alternates random and collude/betray'
+
+options = ['b', 'c']
+
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
@@ -33,8 +35,14 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
+    if len(my_history)%2 == 0:
+        if (len(my_history)/2)%2 == 0:
+            return 'c'
+        else:
+            return 'b'
+    else:
+        return random.choice(options)
     
-    return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
